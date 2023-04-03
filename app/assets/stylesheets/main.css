@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+form {
+    border-radius: 8px;
+    width: 75%;
+    text-align: center;
+    border:3px solid green;
+    padding: 3px;
+    align-content: center;
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    animation: test 8s infinite;
+} 
+.formwidth{
+  width: 80%;
+}
+.setlogo{
+  height: 10px;
+  width: 10px;
+}
+.setcolor{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+@keyframes test {
+  from {background-color: rgba(226, 101, 101, 0.308);}
+  to {background-color: rgb(130, 130, 185);}
+}

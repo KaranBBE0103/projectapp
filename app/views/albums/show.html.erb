@@ -1,0 +1,34 @@
+<h1 class="text-success text-center text-uppercase text-decoration-underline lh-lg fst-italic"><%= @album.title %></h1>
+<p  class="text-capitalize fs-4 mx-1"><%= @album.body %></p>
+
+<div class="text-center">
+  <li style='list-style :none'>
+    <% @album.videos.each do |video| %>
+      <div class="col d-flex justify-content-center rounded">
+        <div class="card h-100 img-fluid border border-dark">
+          <video width="320" height="240" controls>
+          <source src="<%= url_for(video) %>" type="<%= video.content_type %>">
+          </video>
+          
+          <div class="card-body text-center">
+            <b><h5 class="card-title"><button type="button" class="btn btn-link btn-outline-danger rounded-pill text-uppercase mx-2"><%= link_to "Remove video",remove_video_album_path(@album, video_id: video.id), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                    }%></button> </h5></b>
+          </div>
+        </div>
+      </div>
+      <br>
+    <%end %>
+  </li>
+</div>
+
+<div class="text-center">
+  <button type="button" class="btn btn-link btn-outline-warning rounded-pill text-uppercase"><%= link_to "Edit Album", edit_album_path(@album)%></button> 
+  <button type="button" class="btn btn-link btn-outline-danger rounded-pill text-uppercase mx-2"><%= link_to "Destroy", album_path(@album), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }%></button> 
+  <br>
+  <br>
+</div>

@@ -1,0 +1,25 @@
+<div class="container d-flex justify-content-center">
+  <%= search_form_for @q do |form| %>
+    <%= form.label :title_cont, "Album Title" %>
+    <%= form.search_field :title_cont %>
+    <%= form.submit "Search" %>
+  <% end %>
+</div>
+<br>
+<div class="bg-light">
+  <div class="row row-cols-1 row-cols-md-4 g-4 container-fluid">
+    <% @albums.each do |album| %>
+      <div class="col">
+        <div class="card h-100 img-fluid border border-danger">
+          <%if album.coverimg.attached? %>
+            <%= image_tag url_for(album.coverimg),style:"height:80%;width:100%" %>
+           <% end %>
+        <div class="card-body text-center bg-success">
+          <b><h5 class="card-title"><%= link_to album.title, album , class:"setcolor"%></h5></b>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <br>
+</div>
