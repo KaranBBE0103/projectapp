@@ -29,7 +29,7 @@
   <div class="row">
     <% @albums.each do |album| %>
       <div class="col-6">
-        <p class="text-danger" >Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+        <p class="text-danger">Tags:<%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p>
         <p class="btn btn-dark rounded-pill fst-italics"><%= link_to "Read album", album_path(album) %></p>
       </div>
     <% end %>
