@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "albums#index"
   # devise_for :users, controllers: { sessions: 'users/sessions' }
   get '/my_albums' ,to: 'albums#my_albums'
+  get 'tags/:tag', to: 'albums#index', as: :tag
 
   resources :albums do
     member do

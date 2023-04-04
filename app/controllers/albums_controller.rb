@@ -3,8 +3,8 @@ class AlbumsController < ApplicationController
 
   def index
     @q = Album.ransack(params[:q])
-    @albums = @q.result(distinct: true)
-    .where(publisher: true)
+    @albums = @q.result(distinct: true).where(publisher: true)
+    params[:tag] ? @albums = Album.tagged_with(params[:tag]) : @albums = Album.all.where(publisher: true)
     # @albums = Album.all
     # @albums = Album.where(publisher: true)
   end
@@ -54,12 +54,13 @@ class AlbumsController < ApplicationController
   def my_albums
     # @albums = Album.all
     @q = Album.ransack(params[:q])
-    @albums = @p.result(distinct: true)
+    @albums = @q.result(distinct: true)
     .where(publisher: false)
+    params[:tag] ? @albums = Album.tagged_with(params[:tag]) : @albums = Album.all.where(publisher: false)
   end
 end
 
 private
 def album_params
-  params.require(:album).permit(:title, :body, :publisher, :coverimg, videos: [])
+  params.require(:album).permit(:title, :body, :publisher, :coverimg,:tag_list, :tag,:tag_ids,{ tag_ids: [] }, videos: [])
 end
