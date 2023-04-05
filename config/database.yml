@@ -22,5 +22,5 @@ test:
 production:
   <<: *default
   database: project_production
-  username: myapp
+  username: project
   password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
