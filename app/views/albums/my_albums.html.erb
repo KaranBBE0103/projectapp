@@ -18,7 +18,7 @@
 
           <div class="card-body text-center bg-success">
             <b><h5 class="card-title"><%= link_to album.title, album , class:"setcolor"%></h5></b>
-            <p><small>Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+            <p class="text-white fs-4" ><small>Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
           </div>
         </div>
       </div>

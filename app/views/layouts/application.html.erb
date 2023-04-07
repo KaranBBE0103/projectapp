@@ -22,7 +22,7 @@
     <%= render 'layouts/mynav'%>
      <br>
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>
+       <span class="text-danger fst-italic fs-5">Logged in as:</span> <strong class="text-success fs-5"><%= current_user.email %></strong>
       <% end %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <p class="notice text-success fs-5"><%= notice %></p>

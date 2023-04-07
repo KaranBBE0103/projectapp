@@ -1,36 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
   <div class="container-fluid">
-    <a class="navbar-brand " href="<%= root_path %>"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M18 7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-3.333L22 17V7l-4 3.333V7z"></path></svg>
-          <b>Video Albums</b></a>
+    <a class="navbar-brand " href="<%= root_path %>"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill: rgba(255,255,255, 1);transform: ;msFilter:;"><path d="M18 7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-3.333L22 17V7l-4 3.333V7z"></path></svg>
+          <b class="text-white">Video Albums</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-capitalize fs-5 fst-italic" href="<%= root_path %>">Home</a>
+          <a class="nav-link text-white text-capitalize fs-5 fst-italic" href="<%= root_path %>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-capitalize fs-5 fst-italic" href="<%= new_album_path %>">New Album</a>
+          <a class="nav-link text-white text-capitalize fs-5 fst-italic" href="<%= new_album_path %>">New Album</a>
         </li>
         <li class="nav-item">
-          <%=link_to "My Album", my_albums_path, class:'nav-link text-capitalize fs-5 fst-italic'%>
+          <%=link_to "My Album", my_albums_path, class:'nav-link text-capitalize text-white fs-5 fst-italic'%>
         </li>
         
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%=link_to "edit profile", edit_user_registration_path, class:'nav-link text-capitalize fs-5 fst-italic'%>
+            <%=link_to "edit profile", edit_user_registration_path, class:'nav-link text-capitalize text-white fs-5 fst-italic'%>
           </li>
           <li class="nav-item">
-            <%=link_to "logout", destroy_user_session_path, class:'nav-link text-capitalize fs-5 fst-italic', data: 
+            <%=link_to "logout", destroy_user_session_path, class:'nav-link text-capitalize text-white fs-5 fst-italic', data: 
             { turbo_method: :delete}%>  
           </li>
         <% else %> 
           <li class="nav-item">
-            <%=link_to "sign up", new_user_registration_path, class:'nav-link text-capitalize fs-5 fst-italic'%>
+            <%=link_to "sign up", new_user_registration_path, class:'nav-link text-capitalize text-white fs-5 fst-italic'%>
           </li>
           <li class="nav-item">
-            <%=link_to "Login", new_user_session_path, class:'nav-link text-capitalize fs-5 fst-italic'%>
+            <%=link_to "Login", new_user_session_path, class:'nav-link text-capitalize text-white fs-5 fst-italic'%>
           </li>
         <% end %>
       </ul>

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 form {
-    border-radius: 8px;
+    border-radius: 10px;
     width: 75%;
     text-align: center;
     border:3px solid green;
@@ -10,18 +10,18 @@ form {
     align-content: center;
     font-weight: 800;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    animation: test 8s infinite;
+    animation: test 5s infinite;
 } 
 .formwidth{
   width: 80%;
 }
 .setlogo{
-  height: 10px;
+  height: 13px;
   width: 10px;
 }
 .setcolor{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 1.3rem;
     font-style: italic;
 }

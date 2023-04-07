@@ -16,7 +16,7 @@
            <% end %>
         <div class="card-body text-center bg-success">
           <b><h5 class="card-title"><%= link_to album.title, album , class:"setcolor"%></h5></b>
-          <p><small>Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+          <p class="text-white fs-4"><small>Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
         </div>
       </div>
     </div>
@@ -26,11 +26,11 @@
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row bg-light">
     <% @albums.each do |album| %>
       <div class="col-6">
-        <p class="text-danger">Tags:<%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-        <p class="btn btn-dark rounded-pill fst-italics"><%= link_to "Read album", album_path(album) %></p>
+        <p class="text-danger fs-5">Tags:<%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+        <p class="btn btn-dark text-white rounded-pill fst-italic"><%= link_to "Read album", album_path(album) %></p>
       </div>
     <% end %>
   </div>
