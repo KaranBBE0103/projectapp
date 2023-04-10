@@ -13,13 +13,13 @@
         <div class="card h-100 img-fluid border border-danger">
           <%if album.coverimg.attached? %>
             <%= image_tag url_for(album.coverimg),style:"height:80%;width:100%" %>
-           <% end %>
-        <div class="card-body text-center bg-success">
-          <b><h5 class="card-title"><%= link_to album.title, album , class:"setcolor"%></h5></b>
-          <p class="text-white fs-4"><small>Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+          <% end %>
+          <div class="card-body text-center bg-success">
+            <b><h5 class="card-title"><%= link_to album.title, album , class:"setcolor"%></h5></b>
+            <p class="text-white fs-4"><small>Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
   </div>
   <br>
