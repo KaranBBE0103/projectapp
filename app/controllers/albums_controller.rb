@@ -54,8 +54,7 @@ class AlbumsController < ApplicationController
   def my_albums
     # @albums = Album.all
     @q = Album.ransack(params[:q])
-    @albums = @q.result(distinct: true)
-    .where(publisher: false)
+    @albums = @q.result(distinct: true).where(publisher: false)
     params[:tag] ? @albums = Album.tagged_with(params[:tag]) : @albums = Album.all.where(publisher: false)
   end
 end
