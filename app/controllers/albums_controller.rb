@@ -3,10 +3,13 @@ class AlbumsController < ApplicationController
 
   def index
     @q = Album.ransack(params[:q])
-    @albums = @q.result(distinct: true).where(publisher: true)
-    params[:tag] ? @albums = Album.tagged_with(params[:tag]) : @albums = Album.all.where(publisher: true)
-    # @albums = Album.all
-    # @albums = Album.where(publisher: true)
+    @albums = Album.all.where(publisher: true)
+  
+    if params[:tag].present?
+      @albums = @albums.tagged_with(params[:tag]).where(publisher: true)
+    else
+      @albums = @q.result(distinct: true).where(publisher: true)
+    end
   end
   def show
     @album = Album.find(params[:id])
@@ -46,9 +49,9 @@ class AlbumsController < ApplicationController
 
   def remove_video
     @album = Album.find(params[:id])
-   video_attachment = @album.videos.find(params[:video_id])
-   video_attachment.purge 
-   redirect_to @album, alert: "Video attachment deleted."
+    video_attachment = @album.videos.find(params[:video_id])
+    video_attachment.purge 
+    redirect_to @album, alert: "Video attachment deleted."
   end
 
   def my_albums
